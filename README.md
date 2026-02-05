@@ -15,3 +15,16 @@ Full stack application that helps users organize expenses and uses AI to analyze
 - Clear financial overview
 - Behavior-based insights
 - Privacy-first AI architecture
+
+## Environment Variables
+
+The application requires the following environment variables to run locally:
+
+| Variable        | Description                                  |
+|-----------------|----------------------------------------------|
+| DATABASE_URL    | PostgreSQL connection string                 |
+| NODE_ENV        | Application environment (development/prod)  |
+| JWT_SECRET      | Secret key for JWT authentication            |
+| PORT            | Port where the server runs                   |
+
+Create a `.env` file based on `.env.example` before running the project.
