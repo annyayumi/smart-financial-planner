@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { prisma } from "../../lib/prisma";
 import { comparePassword } from "../../lib/hash";
+import { generateToken } from "../../lib/jwt";
 
 export async function login(req: Request, res: Response) {
   const { email, password } = req.body;
@@ -26,8 +27,11 @@ export async function login(req: Request, res: Response) {
     return res.status(401).json({ error: "Email ou senha inválidos" });
   }
 
+  const token = generateToken(user.id);
+
   return res.status(200).json({
     message: "Login realizado com sucesso",
+    token,
     user: {
       id: user.id,
       email: user.email,

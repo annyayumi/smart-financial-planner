@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["node", "cors"]
+    "typeRoots": ["./node_modules/@types", "./src/@types"]
   },
   "include": [
     "src",
